@@ -1,13 +1,10 @@
-/* Reset and global styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d1117; /* dark background */
+    background-color: #0d1117;
     color: #f0f0f0;
   }
-  
-  /* Main container */
   .container {
     max-width: 900px;
     margin: 60px auto;
@@ -29,8 +26,7 @@ body {
       transform: translateY(0);
     }
   }
-  
-  /* Title section */
+
   .heading {
     text-align: center;
     color: #ffa500;
@@ -52,8 +48,7 @@ body {
     gap: 40px;
     justify-content: space-between;
   }
-  
-  /* Panels */
+
   .right, .left {
     flex: 1 1 420px;
     display: flex;
@@ -71,8 +66,6 @@ body {
     transform: translateY(-5px);
   }
   
-  /* Input */
-
   .right h4{
     color:#ffa500;
     font-size: 24px;
@@ -96,8 +89,7 @@ body {
     border-color: #ffa500;
     box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
   }
-  
-  /* Buttons */
+
   .btn-div {
     display: flex;
     justify-content: center;
@@ -124,7 +116,6 @@ body {
     transform: scale(1.05);
   }
   
-  /* Result section */
   .left h1 {
     color: #cececd;
     text-align: center;
@@ -137,14 +128,11 @@ body {
     color: #ffa500;
     font-size: 24px;
   }
-  
-  /* Responsive */
+
   @media (max-width: 768px) {
     .Container_middle {
         height: 550px;
         width: auto;
-        /* justify-content: center;
-        align-items: center; */
         text-align: center;
       flex-direction: column;
       gap: 24px;

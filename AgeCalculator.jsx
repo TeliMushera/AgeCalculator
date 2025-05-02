@@ -1,0 +1,51 @@
+import { useState } from 'react'
+import './AgeCalculator.css'
+
+function AgeCalculator() {
+
+  const [birthdate , setBirthdate] = useState("");
+  const[age, setAge] = useState(0);
+
+  const calculateAge = () => {
+    const today = new Date();
+    const birthdateDate = new Date(birthdate);
+
+    let age = today.getFullYear() - birthdateDate.getFullYear();
+    const monthDiff = today.getMonth() - birthdateDate.getMonth();
+    if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdateDate.getDate())){
+      age--;
+    }
+    setAge(age);
+  };
+
+  const resetCalculator = () => {
+    setBirthdate('');
+    setAge(null);
+  };
+
+  return (
+      <div className='container'>
+        <h2 className='heading container_title'>Age Calculator</h2>
+        <p className='para container_title'>The Age Calculator can determine the age or interval between two dates with precision, helping users track their exact age.</p>
+        <div className='Container_middle'>
+          <div className='right'>
+            <h4>Date of Birth</h4>
+            <input className='date' type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)}/>
+            <div className='btn-div'>
+              <button className='btn' onClick={calculateAge}>Calculate Age</button>
+              <button className='btn' onClick={resetCalculator}>Reset</button>
+            </div>
+          </div>
+          <div className='left'>
+            <div className='Container-middle-para'>
+              <h1>Your Age is:</h1>
+            </div>
+            <h1>{age > 0 ? `${age}` : 0}</h1>
+
+          </div>
+        </div>
+      </div>
+  )
+}
+
+export default AgeCalculator
